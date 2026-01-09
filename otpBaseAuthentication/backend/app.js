@@ -1,8 +1,7 @@
 import express from "express";
 import 'dotenv/config';
 import authRoute from './routes/auth.js';
-
-
+import todoRouter from "./routes/route.todo.js";
 import connectDB from "./utils/mongodb.js";
 
 const app = express();
@@ -13,6 +12,7 @@ connectDB();
 app.use(express.json());
 
 app.use('/api/auth', authRoute);
+app.use('/api/todo', todoRouter);
 
 app.get("/", (req, res) =>{
     res.send("Api is working...");

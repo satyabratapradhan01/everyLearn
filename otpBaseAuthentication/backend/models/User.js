@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
     email: { type: String, unique: true, required: true},
-    password: { type: String},
+    password: { type: String, required: true},
     isVarified: {type: Boolean, default: false},
 
     otp: String,
